@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("P Cat 1 IDWM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5aa2233d81fd5ac70d170a44293e5ad6c751557")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8b6cd54c981cd8acd7b127c5a556a7067929f4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("P Cat 1 IDWM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("P Cat 1 IDWM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
