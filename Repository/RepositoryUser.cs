@@ -19,12 +19,22 @@ namespace P_Cat_1_IDWM.Repository
             _users = _dataProvider.Users;
         }
 
-        public IEnumerable<User> All(bool isOrdered, bool ascending, string filterGender)
+        public IEnumerable<User> All(bool isOrdered, string typeOrdering, string filterGender)
         {
             IEnumerable<User> allUsers = _users;
 
+            if(!(filterGender == "Masculino" || filterGender == "Femenino" 
+            || filterGender == "Otro")){
+                throw new Exception("Filter gender is bad");
+            }
+
             if(isOrdered) {
-                if(ascending) {
+
+                if(!(typeOrdering == "asc" || typeOrdering == "desc")) {
+                    throw new Exception("Filter by ordering is bad");
+                }
+
+                if(typeOrdering == "asc") {
                     allUsers = _users.OrderBy(userSearched => userSearched.name);
                 } else {
                     allUsers = _users.OrderByDescending(userSearched => userSearched.name);
@@ -38,18 +48,18 @@ namespace P_Cat_1_IDWM.Repository
             return allUsers;
         }
 
-        public bool Delete(string rut)
+        public User? Delete(string rut)
         {
           var userSearched = _users.Where(userSearched => 
             rut == userSearched.rut)
             .First();
 
             if(userSearched == null){
-                return false;
+                return null;
             }
 
             _users.Remove(userSearched);
-            return true;
+            return userSearched;
         }
 
         public User Edit(User user)

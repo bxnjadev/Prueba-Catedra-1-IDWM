@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\P Cat 1 IDWM.props" />
+</Project>

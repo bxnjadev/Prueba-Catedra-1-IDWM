@@ -12,6 +12,8 @@ namespace P_Cat_1_IDWM.data
         
         public DataProvider(DbContextOptions options) : base(options) {}
 
+        public DataProvider() {}
+
         public DbSet<User> Users {get; set;} = null;
 
     }
