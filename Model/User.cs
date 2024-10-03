@@ -11,25 +11,26 @@ namespace P_Cat_1_IDWM.Model
     {
 
         [Required]
-        public int Id = 0;
+        [Key]
+        public int Id {get; set;} = 0;
 
         [Required]
-        public string rut = string.Empty;
+        public string rut {get;set;} = string.Empty;
 
         [Required]
         [Length(3, 100)]
-        public string name = string.Empty;
+        public string name {get; set;} = string.Empty;
 
         [Required]
         [RegularExpression( @"^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]+$")]
-        public string email = string.Empty;
+        public string email {get; set;} = string.Empty;
 
         [Required]
         [RegularExpression("^(Rojo|Verde|Azul)$")]
-        public string gender = "other";
+        public string gender {get; set;} = "other";
 
         [Required]
-        public DateTime dateTime = DateTime.Now;
+        public DateTime dateTime {get; set;} = DateTime.Now;
 
     }
     
