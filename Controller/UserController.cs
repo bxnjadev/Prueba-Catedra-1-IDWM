@@ -64,6 +64,12 @@ namespace P_Cat_1_IDWM.Controller
             [FromBody] User user
         ) {
             
+            var userUpdated = _repository.Edit(user);
+            if(userUpdated == null){
+                return NotFound("El usuario no existe");
+            }
+
+            return userUpdated;
         }
 
     }
