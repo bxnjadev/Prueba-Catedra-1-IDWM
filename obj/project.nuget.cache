@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vtdYoH2DMIk=",
+  "dgSpecHash": "FjJQqQnFUr4=",
   "success": true,
   "projectFilePath": "C:\\Users\\Estudiante\\Desktop\\P Cat 1 IDWM\\P Cat 1 IDWM.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Estudiante\\.nuget\\packages\\bogus\\35.6.1\\bogus.35.6.1.nupkg.sha512",
     "C:\\Users\\Estudiante\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Estudiante\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.8\\microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512",
     "C:\\Users\\Estudiante\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

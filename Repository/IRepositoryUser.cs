@@ -15,7 +15,7 @@ namespace P_Cat_1_IDWM.Repository
         string typeOrdering, 
         string filterGender);
 
-        User Edit(User user);
+        User? Edit(User user);
 
         User? Delete(string rut);
 

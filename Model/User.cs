@@ -11,6 +11,9 @@ namespace P_Cat_1_IDWM.Model
     {
 
         [Required]
+        public int Id = 0;
+
+        [Required]
         public string rut = string.Empty;
 
         [Required]

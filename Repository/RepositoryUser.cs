@@ -59,12 +59,28 @@ namespace P_Cat_1_IDWM.Repository
             }
 
             _users.Remove(userSearched);
+            _dataProvider.SaveChanges();
             return userSearched;
         }
 
         public User Edit(User user)
         {
-            throw new NotImplementedException();
+
+            var userSearched = _users.Where(userSearched => userSearched.Id == user.Id)
+            .First();
+
+            if(userSearched == null){
+                return null;
+            }
+
+            userSearched.dateTime = user.dateTime;
+            userSearched.email = user.email;
+            userSearched.gender = user.gender;
+            userSearched.name = user.email;
+            userSearched.rut = user.rut;
+
+            _dataProvider.SaveChanges();
+            return user;
         }
 
         public User? Store(User user)
