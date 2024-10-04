@@ -28,21 +28,17 @@ namespace P_Cat_1_IDWM.Controller
                 return Conflict("El Rut ya existe");
             }
 
-            return userCreated;
+            return Ok(userCreated);
         }
 
         [HttpGet]
         [Route("/get/")]
         public IEnumerable<User> All(
-            [FromQuery] bool isOrdered,
-            [FromQuery] string typeOrdered,
-            [FromQuery] string typeGender
+            [FromQuery] string? gender,
+            [FromQuery] string? sort
         ) {
-            
-            
-            return _repository.All(isOrdered,
-            typeOrdered,
-            typeGender);
+            return _repository.All(gender,
+            sort);
         }
 
         [HttpDelete]

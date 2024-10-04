@@ -10,39 +10,46 @@ namespace P_Cat_1_IDWM.Repository
 {
     public class RepositoryUser : IRepositoryUser
     {
-
         private readonly DataProvider _dataProvider;
         private readonly DbSet<User> _users;
 
-        public RepositoryUser(DataProvider dataProvider) {
+        public RepositoryUser(DataProvider dataProvider)
+        {
             _dataProvider = dataProvider;
             _users = _dataProvider.Users;
         }
 
-        public IEnumerable<User> All(bool isOrdered, string typeOrdering, string filterGender)
+        public IEnumerable<User> All(string? gender, string? sort)
         {
             IEnumerable<User> allUsers = _users;
 
-            if(!(filterGender == "Masculino" || filterGender == "Femenino" 
-            || filterGender == "Otro")){
-                throw new Exception("Filter gender is bad");
+            if (sort != null)
+            {
+                    if (sort == "asc")
+                    {
+                        allUsers = _users.OrderBy(userSearched => userSearched.name);
+                    }
+                    else if(sort == "desc")
+                    {
+                        allUsers = _users.OrderByDescending(userSearched => userSearched.name);
+                    } else
+                    {
+                        throw new Exception("The ordering should be (asc,desc)");
+                    }   
             }
-
-            if(isOrdered) {
-
-                if(!(typeOrdering == "asc" || typeOrdering == "desc")) {
-                    throw new Exception("Filter by ordering is bad");
+            
+            if (gender != null)
+            {
+                gender = gender.ToLower();
+                if (!(gender == "masculino" 
+                      || gender == "femenino"
+                      || gender == "otro" 
+                      || gender == "prefiero no decirlo"))
+                {
+                    throw new Exception("Filter gender is bad");
                 }
-
-                if(typeOrdering == "asc") {
-                    allUsers = _users.OrderBy(userSearched => userSearched.name);
-                } else {
-                    allUsers = _users.OrderByDescending(userSearched => userSearched.name);
-                }
-            }
-
-            if(filterGender != ""){
-                allUsers = _users.Where(userSearched => userSearched.gender == filterGender);                
+                
+                allUsers = _users.Where(userSearched => userSearched.gender == gender);
             }
 
             return allUsers;
@@ -50,11 +57,12 @@ namespace P_Cat_1_IDWM.Repository
 
         public User? Delete(string rut)
         {
-          var userSearched = _users.Where(userSearched => 
-            rut == userSearched.rut)
-            .FirstOrDefault();
+            var userSearched = _users.Where(userSearched =>
+                    rut == userSearched.rut)
+                .FirstOrDefault();
 
-            if(userSearched == null){
+            if (userSearched == null)
+            {
                 return null;
             }
 
@@ -65,11 +73,11 @@ namespace P_Cat_1_IDWM.Repository
 
         public User Edit(User user)
         {
-
             var userSearched = _users.Where(userSearched => userSearched.Id == user.Id)
-            .FirstOrDefault();
+                .FirstOrDefault();
 
-            if(userSearched == null){
+            if (userSearched == null)
+            {
                 return null;
             }
 
@@ -85,12 +93,12 @@ namespace P_Cat_1_IDWM.Repository
 
         public User? Store(User user)
         {
-            
-            User? userSearched = _users.Where(userSearched => 
-            user.rut == userSearched.rut)
-            .FirstOrDefault();
+            User? userSearched = _users.Where(userSearched =>
+                    user.rut == userSearched.rut)
+                .FirstOrDefault();
 
-            if(userSearched != null){
+            if (userSearched != null)
+            {
                 return null;
             }
 
@@ -99,5 +107,4 @@ namespace P_Cat_1_IDWM.Repository
             return user;
         }
     }
-
 }

@@ -31,7 +31,7 @@ namespace P_Cat_1_IDWM.Model
 
         [Required]
         [RegularExpression("^(masculino|femenino|otro|prefiero no decirlo)$")]
-        public string gender {get; set;} = "other";
+        public string gender {get; set;} = "otro";
 
         [Required]
         [PastDateValidation]

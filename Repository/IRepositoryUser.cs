@@ -11,9 +11,9 @@ namespace P_Cat_1_IDWM.Repository
         
         User? Store(User user);
 
-        IEnumerable<User> All(bool isOrdered, 
-        string typeOrdering, 
-        string filterGender);
+        IEnumerable<User> All(
+        string? gender, 
+        string? sort);
 
         User? Edit(User user);
 
