@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using P_Cat_1_IDWM.Dto;
 using P_Cat_1_IDWM.Model;
 using P_Cat_1_IDWM.Repository;
 
@@ -21,7 +22,7 @@ namespace P_Cat_1_IDWM.Controller
 
         [HttpPost]
         [Route("/create")]
-        public ActionResult<User> Create(User user) {
+        public ActionResult<User> Create(UserDto user) {
             var userCreated = _repository.Store(user);
 
             if(userCreated == null){
@@ -56,12 +57,13 @@ namespace P_Cat_1_IDWM.Controller
         }
 
         [HttpPut]
-        [Route("/update/")]
+        [Route("/edit/{id}")]
         public ActionResult<User> Update(
-            [FromBody] User user
+            int id,
+            [FromBody] UserDto user
         ) {
             
-            var userUpdated = _repository.Edit(user);
+            var userUpdated = _repository.Edit(id, user);
             if(userUpdated == null){
                 return NotFound("El usuario no existe");
             }

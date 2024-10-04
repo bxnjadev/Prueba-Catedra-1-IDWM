@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using P_Cat_1_IDWM.data;
+using P_Cat_1_IDWM.Dto;
 using P_Cat_1_IDWM.Model;
 
 namespace P_Cat_1_IDWM.Repository
@@ -74,9 +75,9 @@ namespace P_Cat_1_IDWM.Repository
             return userSearched;
         }
 
-        public User Edit(User user)
+        public User? Edit(int id, UserDto user)
         {
-            var userSearched = _users.Where(userSearched => userSearched.Id == user.Id)
+            var userSearched = _users.Where(userSearched => userSearched.Id == id)
                 .FirstOrDefault();
 
             if (userSearched == null)
@@ -91,13 +92,13 @@ namespace P_Cat_1_IDWM.Repository
             userSearched.rut = user.rut;
 
             _dataProvider.SaveChanges();
-            return user;
+            return userSearched;
         }
 
-        public User? Store(User user)
+        public User? Store(UserDto userDto)
         {
             User? userSearched = _users.Where(userSearched =>
-                    user.rut == userSearched.rut)
+                    userDto.rut == userSearched.rut)
                 .FirstOrDefault();
 
             if (userSearched != null)
@@ -105,9 +106,18 @@ namespace P_Cat_1_IDWM.Repository
                 return null;
             }
 
-            _users.Add(user);
+            var newUser = new User
+            {
+                rut = userDto.rut,
+                gender = userDto.gender,
+                dateTime = userDto.dateTime,
+                name  = userDto.name,
+                email = userDto.email
+            };
+            
+            _users.Add(newUser);
             _dataProvider.SaveChanges();
-            return user;
+            return newUser;
         }
     }
 }
