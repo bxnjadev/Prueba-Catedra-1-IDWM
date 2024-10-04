@@ -44,12 +44,12 @@ namespace P_Cat_1_IDWM.Controller
         [HttpDelete]
         [Route("/delete/{id}")]
         public ActionResult<User> Delete(
-            [FromQuery] string id
+           int id
         ) {
             var userDeleted = _repository.Delete(id);
 
             if(userDeleted == null){
-                return NotFound("Uusario no encotnrado");
+                return NotFound("Uusario no encontrado");
             }
 
             return userDeleted;

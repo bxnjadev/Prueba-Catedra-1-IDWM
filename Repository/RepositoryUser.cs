@@ -55,10 +55,13 @@ namespace P_Cat_1_IDWM.Repository
             return allUsers;
         }
 
-        public User? Delete(string rut)
+        public User? Delete(int id)
         {
+            
+            Console.WriteLine(id);
+            
             var userSearched = _users.Where(userSearched =>
-                    rut == userSearched.rut)
+                    id == userSearched.Id)
                 .FirstOrDefault();
 
             if (userSearched == null)

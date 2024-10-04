@@ -17,7 +17,7 @@ namespace P_Cat_1_IDWM.Repository
 
         User? Edit(User user);
 
-        User? Delete(string rut);
+        User? Delete(int id);
 
     }
 }
