@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using P_Cat_1_IDWM.Validation;
 
 namespace P_Cat_1_IDWM.Model
 {
@@ -16,15 +17,15 @@ namespace P_Cat_1_IDWM.Model
 
         [Required]
         [MaxLength(20)]
-        public string Rut {get;set;} = string.Empty;
+        public string rut {get;set;} = string.Empty;
 
         [Required]
         [Length(3, 100)]
         [MaxLength(100)]
-        public string Name {get; set;} = string.Empty;
+        public string name {get; set;} = string.Empty;
 
         [Required]
-        [RegularExpression( @"^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]+$")]
+        [RegularExpression( @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")]
         [MaxLength(70)]
         public string email {get; set;} = string.Empty;
 
@@ -33,6 +34,7 @@ namespace P_Cat_1_IDWM.Model
         public string gender {get; set;} = "other";
 
         [Required]
+        [PastDateValidation]
         public DateTime dateTime {get; set;} = DateTime.Now;
 
     }
