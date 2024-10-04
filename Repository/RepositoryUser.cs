@@ -52,7 +52,7 @@ namespace P_Cat_1_IDWM.Repository
         {
           var userSearched = _users.Where(userSearched => 
             rut == userSearched.rut)
-            .First();
+            .FirstOrDefault();
 
             if(userSearched == null){
                 return null;
@@ -67,7 +67,7 @@ namespace P_Cat_1_IDWM.Repository
         {
 
             var userSearched = _users.Where(userSearched => userSearched.Id == user.Id)
-            .First();
+            .FirstOrDefault();
 
             if(userSearched == null){
                 return null;
@@ -85,9 +85,10 @@ namespace P_Cat_1_IDWM.Repository
 
         public User? Store(User user)
         {
-            var userSearched = _users.Where(userSearched => 
+            
+            User? userSearched = _users.Where(userSearched => 
             user.rut == userSearched.rut)
-            .First();
+            .FirstOrDefault();
 
             if(userSearched != null){
                 return null;

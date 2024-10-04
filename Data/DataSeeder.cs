@@ -14,20 +14,18 @@ namespace P_Cat_1_IDWM.data
         public static void Seed(DataProvider dataProvider) {
             var users = dataProvider.Users;
 
-            if(!users.Any()){
+            if(users.Any()){
                 return;
             }
-
-            var idIncremental = 0;
-
+            
             var faker = new Faker<User>()
             .RuleFor(u => u.name, f => f.Internet.UserName())
-            .RuleFor(u => u.Id, f => idIncremental++)
             .RuleFor(u => u.email, f => f.Internet.Email())
             .RuleFor(u => u.dateTime, f => f.Date.Recent())
             .RuleFor(u => u.gender, f => "Other");
 
             faker.Generate(50).ForEach(user => {
+                Console.WriteLine("Addeing user, " + user.name);
                 users.Add(user);
             });
 

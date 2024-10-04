@@ -15,18 +15,21 @@ namespace P_Cat_1_IDWM.Model
         public int Id {get; set;} = 0;
 
         [Required]
-        public string rut {get;set;} = string.Empty;
+        [MaxLength(20)]
+        public string Rut {get;set;} = string.Empty;
 
         [Required]
         [Length(3, 100)]
-        public string name {get; set;} = string.Empty;
+        [MaxLength(100)]
+        public string Name {get; set;} = string.Empty;
 
         [Required]
         [RegularExpression( @"^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]+$")]
+        [MaxLength(70)]
         public string email {get; set;} = string.Empty;
 
         [Required]
-        [RegularExpression("^(Rojo|Verde|Azul)$")]
+        [RegularExpression("^(masculino|femenino|otro|prefiero no decirlo)$")]
         public string gender {get; set;} = "other";
 
         [Required]

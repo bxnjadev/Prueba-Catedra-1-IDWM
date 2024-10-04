@@ -3054,24 +3054,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Estudiante\\.nuget\\packages\\": {}
+    "C:\\Users\\benja\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Estudiante\\Desktop\\P Cat 1 IDWM\\P Cat 1 IDWM.csproj",
+      "projectUniqueName": "C:\\Users\\benja\\Documents\\.NET\\Prueba-Catedra-1-IDWM\\P Cat 1 IDWM.csproj",
       "projectName": "P Cat 1 IDWM",
-      "projectPath": "C:\\Users\\Estudiante\\Desktop\\P Cat 1 IDWM\\P Cat 1 IDWM.csproj",
-      "packagesPath": "C:\\Users\\Estudiante\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Estudiante\\Desktop\\P Cat 1 IDWM\\obj\\",
+      "projectPath": "C:\\Users\\benja\\Documents\\.NET\\Prueba-Catedra-1-IDWM\\P Cat 1 IDWM.csproj",
+      "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\benja\\Documents\\.NET\\Prueba-Catedra-1-IDWM\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Estudiante\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3137,7 +3145,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,8 +8,9 @@ using P_Cat_1_IDWM.Repository;
 
 namespace P_Cat_1_IDWM.Controller
 {
-    [ApiController]
+    
     [Route("api/[controller]")]
+    [ApiController]
     public class UserController : ControllerBase
     {
 
@@ -19,7 +20,7 @@ namespace P_Cat_1_IDWM.Controller
         }
 
         [HttpPost]
-        [Route("/create/")]
+        [Route("/create")]
         public ActionResult<User> Create(User user) {
             var userCreated = _repository.Store(user);
 
