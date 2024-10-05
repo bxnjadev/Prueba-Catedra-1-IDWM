@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 using P_Cat_1_IDWM.Validation;
 
 namespace P_Cat_1_IDWM.Model

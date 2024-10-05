@@ -259,3 +259,4 @@ C:\Users\benja\Documents\.NET\Prueba-Catedra-1-IDWM\obj\Debug\net8.0\refint\P Ca
 C:\Users\benja\Documents\.NET\Prueba-Catedra-1-IDWM\obj\Debug\net8.0\P Cat 1 IDWM.pdb
 C:\Users\benja\Documents\.NET\Prueba-Catedra-1-IDWM\obj\Debug\net8.0\P Cat 1 IDWM.genruntimeconfig.cache
 C:\Users\benja\Documents\.NET\Prueba-Catedra-1-IDWM\obj\Debug\net8.0\ref\P Cat 1 IDWM.dll
+C:\Users\benja\Documents\.NET\Prueba-Catedra-1-IDWM\bin\Debug\net8.0\Prueba Cátedra I Web-Móvil.postman_collection.json

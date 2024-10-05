@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "7bfc6b83-d5f7-4feb-8d5c-834a78296365",
+		"name": "Prueba Cátedra I Web/Móvil",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28977898"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44321/get/?gender=prefiero no decirlo&sort=asc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44321/get/?gender=prefiero no decirlo&sort=asc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44321",
+					"path": [
+						"get",
+						""
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "prefiero no decirlo"
+						},
+						{
+							"key": "sort",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44321/delete/20",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44321/delete/20",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44321",
+					"path": [
+						"delete",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44321/edit/50",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rut\": \"21544970k\",\r\n  \"name\": \"JuanSepulveda\",\r\n  \"email\": \"juan@ucn.cl\",\r\n  \"gender\": \"prefiero no decirlo\",\r\n  \"dateTime\": \"2022-10-04T22:39:50.112Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44321/edit/50",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44321",
+					"path": [
+						"edit",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44321/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rut\": \"309284324\",\r\n  \"name\": \"dfopfjdopjdf\",\r\n  \"email\": \"juan@ucn.cl\",\r\n  \"gender\": \"prefiero no decirlo\",\r\n  \"dateTime\": \"2022-10-04T22:39:50.112Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44321/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44321",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
