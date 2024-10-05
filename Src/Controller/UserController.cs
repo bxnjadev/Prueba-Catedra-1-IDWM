@@ -34,12 +34,21 @@ namespace P_Cat_1_IDWM.Controller
 
         [HttpGet]
         [Route("/get/")]
-        public IEnumerable<User> All(
+        public ActionResult<IEnumerable<User>> All(
             [FromQuery] string? gender,
             [FromQuery] string? sort
         ) {
-            return _repository.All(gender,
-            sort);
+
+            try
+            {
+                return Ok(_repository.All(gender,
+                    sort));
+            }
+            catch (Exception exception)
+            {
+                return BadRequest("Algún parametro es incorrecto");
+            }
+            
         }
 
         [HttpDelete]
